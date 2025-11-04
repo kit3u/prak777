@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #FFB6D9 0%, #FFC9E0 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+}
+
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.icon-wrapper {
+    margin-bottom: 24px;
+}
+
+.header-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 32px;
+}
+
+.input-group {
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+#emailInput {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#emailInput:focus {
+    border-color: #3b82f6;
+}
+
+#emailInput.error {
+    border-color: #ef4444;
+}
+
+.error-message {
+    display: block;
+    color: #ef4444;
+    font-size: 14px;
+    margin-top: 8px;
+    min-height: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+}
+
+.btn-subscribe,
+.btn-thanks {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: #000;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-subscribe:hover,
+.btn-thanks:hover {
+    background: #1f1f1f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-subscribe:active,
+.btn-thanks:active {
+    transform: translateY(0);
+}
+
+/* Dialog Styles */
+.success-dialog {
+    border: none;
+    border-radius: 24px;
+    padding: 0;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.success-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.dialog-content {
+    padding: 40px 32px;
+    text-align: center;
+}
+
+.success-icon {
+    margin-bottom: 24px;
+}
+
+.success-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.success-dialog h2 {
+    font-size: 24px;
+    line-height: 1.4;
+    margin-bottom: 32px;
+}
+
+#userEmail {
+    color: #3b82f6;
+    word-break: break-all;
+}
+
+/* Hidden state */
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .card {
+        padding: 32px 24px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .success-dialog h2 {
+        font-size: 20px;
+    }
+}
